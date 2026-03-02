@@ -23,7 +23,7 @@ useEffect(()=>{
     setShowMenu(!showMenu);
   }
   return (
-    <header className={ `fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'shadow-md' : 'bg-transparent'}` }>
+    <header className={ `fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'drop-shadow-[0_4px_25px_rgba(0,0,0,.9)]' : ''}` }>
       <nav className='max-w-[1400px] mx-auto px-10 md:h-[13vh] h-[12vh] flex  justify-between items-center '>
         <a href="#" className='text-3xl font-bold'>
           Gr<span className='text-orange-500 uppercase'>O</span>cify
