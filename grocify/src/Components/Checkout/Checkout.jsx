@@ -32,7 +32,8 @@ const Checkout = ({ open, onClose }) => {
     setErrors([])
 
     try {
-      const res = await fetch('/api/order', {
+      const apiBase = import.meta.env.VITE_API_URL || ''
+      const res = await fetch(`${apiBase}/api/order`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
