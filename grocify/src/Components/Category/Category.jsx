@@ -6,6 +6,10 @@ import DairyCat from '../../assets/dairy-and-eggs.png'
 import Button from '../Button/Button'
 const Category = () => {
 
+  const scrollToProducts = () => {
+    document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   const renderCards=category.map((item)=>{
     return(
       // card
@@ -18,7 +22,7 @@ const Category = () => {
         <div className='bg-zinc-100 pt-17 p-8 rounded-xl'>
           <h3 className='text-zinc-800 text-3xl font-bold'>{item.title}</h3>
           <p className='text-zinc-600 mt-3 mb-9'>{item.description}</p>
-          <Button content={"See All"}></Button>
+          <Button content={"See All"} onClick={scrollToProducts}></Button>
         </div>
       </div>
         )})

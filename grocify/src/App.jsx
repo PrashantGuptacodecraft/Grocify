@@ -1,15 +1,13 @@
-import { useState } from 'react'
 import Home from './Components/Home/Home'
+import { CartProvider } from './context/CartContext'
 
 import './App.css'
 
 function App() {
- 
-
   return (
-    <>
-    <Home />
-    </>
+    <CartProvider>
+      <Home />
+    </CartProvider>
   )
 }
 

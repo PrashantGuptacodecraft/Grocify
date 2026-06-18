@@ -4,8 +4,10 @@ import { HiMiniShoppingBag } from "react-icons/hi2";
 import { FaSearch } from "react-icons/fa";
 import { TbMenu2 } from "react-icons/tb";
 import { TbMenu3 } from "react-icons/tb";
+import { useCart } from '../../context/cartStore'
 
-const Navbar = ({ cartCount }) => {
+const Navbar = () => {
+  const { count: cartCount, openCart } = useCart();
   const[showMenu, setShowMenu] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 useEffect(()=>{
@@ -54,14 +56,14 @@ useEffect(()=>{
           
 
           <a href="#" className='text-zinc-800 text-2xl'><FaHeartPulse /></a>
-          <a href="#" className='text-zinc-800 text-2xl relative'>
+          <button type="button" onClick={openCart} aria-label="Open cart" className='text-zinc-800 text-2xl relative cursor-pointer'>
             <HiMiniShoppingBag />
             {cartCount > 0 && (
               <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                 {cartCount}
               </span>
             )}
-          </a>
+          </button>
 
     {/* Hamburger */}
           <a href="#" className='text-zinc-800 text-3xl md:hidden'onClick={toggleMenu} >

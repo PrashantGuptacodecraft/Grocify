@@ -7,7 +7,7 @@ import Basket from '../../assets/basket-full-vegetables.png'
 const Values = () => {
   const leftValues=values.slice(0,2).map((item)=>{
     return(
-      <div className='flex md:flex-row-reverse items-center gap-7'>
+      <div key={item.id} className='flex md:flex-row-reverse items-center gap-7'>
         <div>
           <span className=' flex justify-center items-center  text-3xl text-white bg-gradient-to-b from-orange-400 to-orange-500 w-15 h-15 rounded-full'>{item.icon}</span>
         </div>
@@ -23,7 +23,7 @@ const Values = () => {
 
         const rightValues=values.slice(2).map((item)=>{
     return(
-      <div className='flex items-center gap-7 '>
+      <div key={item.id} className='flex items-center gap-7 '>
         <div>
           <span className=' flex justify-center items-center  text-3xl text-white bg-gradient-to-b from-orange-400 to-orange-500 w-15 h-15 rounded-full'>{item.icon}</span>
         </div>
@@ -61,24 +61,24 @@ export default Values
 const values=[{
   id:1,
   title:"Trust",
-  para:"It is a long established fact that a reader will be distracted by the readable ",
+  para:"Thousands of families rely on Grocify every week for honest pricing and dependable doorstep delivery.",
   icon:<FaHeart/>
 },{
   id:2,
   title:"Always Fresh",
-  para:"It is a long established fact that a reader will be distracted by the readable.",
+  para:"Produce is sourced daily from local farms, so everything reaches you crisp, ripe, and full of flavour.",
   icon:<FaLeaf/>
 },
 {
   id:3,
   title:"Food Safety",
-  para:"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  para:"Every item is stored, handled, and packed under strict hygiene and cold-chain standards.",
   icon:<FaShieldAlt/>
 },
 {
   id:4,
   title:"100% Organic",
-  para:"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  para:"Our fruits and vegetables are grown without synthetic pesticides, certified organic from farm to bag.",
   icon:<FaSeedling/>
 },
 ]

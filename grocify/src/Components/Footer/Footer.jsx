@@ -1,6 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Footer = () => {
+  const [email, setEmail] = useState('')
+  const [subscribed, setSubscribed] = useState(false)
+
+  const handleSubscribe = (e) => {
+    e.preventDefault()
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return
+    setSubscribed(true)
+    setEmail('')
+  }
+
   return (
     <footer id="footer" className='bg-zinc-800 text-white mt-20 pt-16 pb-8'>
       <div className='max-w-[1400px] mx-auto px-10 grid md:grid-cols-4 gap-10'>
@@ -29,10 +39,21 @@ const Footer = () => {
         <div>
           <h4 className='text-xl font-bold mb-6'>Newsletter</h4>
           <p className='text-zinc-400 mb-4'>Subscribe to get the latest updates and offers.</p>
-          <div className='flex'>
-            <input type="email" placeholder='Email address' className='bg-zinc-700 px-4 py-2 rounded-l-lg focus:outline-none w-full text-white' />
-            <button className='bg-orange-500 px-4 py-2 rounded-r-lg font-bold hover:bg-orange-600 transition'>Go</button>
-          </div>
+          {subscribed ? (
+            <p className='text-green-400 font-semibold'>Thanks for subscribing! 🎉</p>
+          ) : (
+            <form className='flex' onSubmit={handleSubscribe}>
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder='Email address'
+                className='bg-zinc-700 px-4 py-2 rounded-l-lg focus:outline-none w-full text-white'
+              />
+              <button type="submit" className='bg-orange-500 px-4 py-2 rounded-r-lg font-bold hover:bg-orange-600 transition'>Go</button>
+            </form>
+          )}
         </div>
       </div>
       <div className='max-w-[1400px] mx-auto px-10 mt-16 pt-8 border-t border-zinc-700 text-center text-zinc-500'>
