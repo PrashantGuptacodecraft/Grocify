@@ -81,11 +81,20 @@ logged to the server console instead.
 
 ## Scripts
 
-| Command | Description |
-| --- | --- |
-| `npm run dev` | Run frontend + backend together |
-| `npm run dev:client` | Frontend only |
-| `npm run server` | Backend only |
-| `npm run build` | Production build of the frontend |
-| `npm run lint` | Lint the project |
-| `npm run preview` | Preview the production build |
+| Command              | Description                      |
+| -------------------- | -------------------------------- |
+| `npm run dev`        | Run frontend + backend together  |
+| `npm run dev:client` | Frontend only                    |
+| `npm run server`     | Backend only                     |
+| `npm run build`      | Production build of the frontend |
+| `npm run lint`       | Lint the project                 |
+| `npm run preview`    | Preview the production build     |
+
+---
+
+## Contact / About
+
+For questions or collaboration, reach out to the project owner:
+
+- Email: prashant983869@gmail.com
+- Phone: 9838693305
